@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Projeto JavaScript</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    </head>
+    <body onload="
+          document.alunos.style.display='none';
+          document.professores.style.display='none';
+          document.funcionarios.style.display='none';
+          "
+        >
+     <!-- ################## Formulário de Alunos #################### -->
+
+        <a href="#" 
+           onclick="return trocar(document.alunos, document.funcionarios, document.professores);">
+            Alunos      
+        </a>
+         - 
+        <a href="#"
+        onclick="return trocar(document.funcionarios, document.alunos, document.professores);">
+           Funcionarios      
+        </a>
+        - 
+        <a href="#"
+        onclick="return trocar(document.professores, document.funcionarios, document.alunos);">
+            Professores 
+        </a>
+        
+    
+    <form id="alunos" name="alunos" class="form-horizontal"
+          >
+            <fieldset id="A">
+
+                <!-- lejenda Aluno -->
+                <legend>Alunos</legend>
+
+                <!-- Text input Nome-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nome">Nome:</label>  
+                    <div class="col-md-4">
+                        <input id="nomeAluno" name="nomeAluno" type="text" placeholder="Nome Completo" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input E-mail-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="email">E-mail</label>  
+                    <div class="col-md-4">
+                        <input id="emailAluno" name="emailAluno" type="email" placeholder="xxx@xxxx.com" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input Telefone-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="telefone">Telefone:</label>  
+                    <div class="col-md-4">
+                        <input id="telefoneAluno" name="telefoneAluno" type="number" placeholder="(99) 99999-9999" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input NASCIMENTO-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nasc">Data de Nascimeneto:</label>  
+                    <div class="col-md-4">
+                      <input id="nascAluno" name="nasc" type="date" placeholder="" class="form-control input-md" required="">
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group" id="button">
+                    <label class="col-md-4 control-label" for="envia"></label>
+                    <div class="col-md-4">
+                      <input class="button" type="button" value="Cadastrar Aluno" onclick="CadastrarAluno()">
+                      <input class="button" type="button" value="Consultar Aluno" onclick="ConsultarAluno()">
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <!-- formulario de almazenamento -->
+            <div id="dadosAlunos" name="dadosAlunos" class="containerAluno" >
+                <table class="tabla" id="tablaA">
+                   <thead class="thead-inverse">
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Telefone</th>
+                            <th>Nascimeneto</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>            
+
+        </form>
+        
+        <!-- ################## Formulário de Funcionarios #################### -->
+        
+        <form id="fucionarios" name="funcionarios" class="form-horizontal"
+              >
+            <fieldset id="F">
+
+                <!-- Lejenda Funcionario -->
+                <legend>Funcionario</legend>
+               
+                 <!-- Text input Nome-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nomef">Nome:</label>  
+                    <div class="col-md-4">
+                        <input id="nomef" name="nomef" type="text" placeholder="Nome Completo" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input CPF-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="cpff">CPF:</label>  
+                    <div class="col-md-4">
+                        <input id="cpff" name="cpff" type="text" placeholder="123.456.789-09" class="form-control input-md" required=""  maxlength="11">
+                    </div>
+                </div>
+
+                <!-- Text input Setor-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="Setorf">Setor:</label>  
+                    <div class="col-md-4">
+                        <input id="Setorf" name="telf" type="text" placeholder="Ex Gerencia" class="form-control input-md" required="">
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group" id="button">
+                    <label class="col-md-4 control-label" for="envia"></label>
+                    <div class="col-md-4">
+                        <input class="button" type="button" value="Cadastrar Funcionario" onclick="CadastrarFuncionario()">
+                        <input class="button" type="button" value="Consultar Funcionario" onclick="ConsultarFuncionario()">
+                    </div>
+                </div>    
+            </fieldset>
+
+            <!-- formulario de almazenamento -->
+            <div id="dadosFuncionarios" name="dadosFuncionarios" class="containerFuncionario" >
+                <table class="tabla" id="tablaF">
+                   <thead class="thead-inverse">
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Setor</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>     
+
+        </form>
+
+        <!-- ################## Formulário de Professores #################### -->
+        
+        <form name="professores" id="professores" class="form-horizontal">
+            <fieldset id="P">
+
+                <!-- Lejenda Professor -->
+                <legend>Professores</legend>
+
+                <!-- Text input Nome-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="nomeProfessor">Nome:</label>  
+                    <div class="col-md-4">
+                        <input id="nomeProfessor" name="nomeProfessor" type="text" placeholder="Nome Completo" class="form-control input-md" required="">
+
+                    </div>
+                </div>
+
+                <!-- Text input CPF-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="CPFProfessor">CPF:</label>  
+                    <div class="col-md-4">
+                        <input id="cpfProfessor" name="cpfProfessor" type="text" placeholder="123.456.789-09" class="form-control input-md" required="" maxlength="11">
+                    </div>
+                </div>
+
+                <!-- Select Basic Materias-->
+                <div class="form-group">
+                    <label class="col-md-4 control-label" for="MateriasProfessor">Materia:</label>
+                    <div class="col-md-4">
+                        <select id="MateriasProfessor" name="MateriasProfessor" class="form-control">
+                            <option value=""> SELECIONE </option>
+                            <option value="javaScript">JavaScript</option>
+                            <option value="html">HTML</option>
+                            <option value="c++">C++</option>
+                            <option value="c">C</option>
+                            <option value="BancoDeDados">Banco de Dados</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <div class="form-group" id="button">
+                    <label class="col-md-4 control-label" for="envia"></label>
+                    <div class="col-md-4">
+                        <input class="button" type="button" value="Cadastrar Professor" onclick="CadastrarProfessor()">
+                        <input class="button" type="button" value="Consultar Professor" onclick="ConsultarProfessor()">
+                    </div>
+                </div>
+            </fieldset>
+
+            <!-- formulario de almazenamento Professor -->
+            <div id="dadosProfessor" name="dadosProfessor" class="containerProfessor" >
+                <table class="tabla" id="tablaP">
+                   <thead class="thead-inverse">
+                        <tr>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Materia</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>     
+
+        </form><br> 
+     
+    </body>
+    <script language="JavaScript" src="js.js"></script>
+</html>
