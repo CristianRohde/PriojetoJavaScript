@@ -84,5 +84,11 @@ a{
 }
 a:hover{
     background-color: red;
-    
+}
+
+/* Responsive para Iphone 6*/
+@media only screen and (max-width: 376px){
+    a{
+        font-size: 20px;
+    }
 }
