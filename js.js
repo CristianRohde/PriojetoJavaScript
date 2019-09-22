@@ -53,6 +53,7 @@ function acrescentarAluno(){
     dadosAluno.push(novoAluno);
     document.getElementById("tablaA").innerHTML += ' <tbody><td>'+novoAluno.nome+'</td><td>'+novoAluno.mail+
     '</td><td>'+novoAluno.telefone+'</td><td>'+novoAluno.nasc+'</td></tbody> ';
+    
     document.getElementById("nomeAluno").value="";
     document.getElementById("emailAluno").value="";
     document.getElementById("telefoneAluno").value="";
