@@ -11,16 +11,17 @@ function CadastrarAluno(){
     var mailDigitado = document.getElementById("emailAluno").value;
     var telefoneDigitado = document.getElementById("telefoneAluno").value;
     var nascDigitado = document.getElementById("nascAluno").value;
-    expresion = /\w+@\w+\.+[a-z]/; 
+    expresionMail = /\w+@\w+\.+[a-z]/; 
+    expresaoNomeA = /[a-z]/;
     
-    //Valdando campos vazios
-    if(nomeDigitado.length == "" || nomeDigitado.length < 4){
+    //Validando campos vazios
+    if(nomeDigitado.length == "" || nomeDigitado.length < 4 || expresaoNomeA.test(nomeDigitado)){
         alert("Favor Preencha Corretamente o Nome Completo!")
     }else{
         if(mailDigitado.length == "" ){
             alert("Favor Preencha Corretamente o E-Mail!")
         }else{
-            if(!expresion.test(mailDigitado)){
+            if(!expresionMail.test(mailDigitado)){
                 alert("Favor Preencha Corretamente o E-Mail!")
             }else if(telefoneDigitado == ""){
                 alert("Favor Preencha Corretamente o Telefone!")
@@ -76,10 +77,11 @@ function CadastrarFuncionario(){
     var nomeDigitado = document.getElementById("nomef").value;
     var cpfDigitado = document.getElementById("cpff").value;
     var setorDigitado = document.getElementById("Setorf").value;
+    espresaoNomeF = /[a-z]/;
     expresionCPF = /[a-z]/; 
  
     //Valdando campos vazios
-    if(nomeDigitado.length == "" || nomeDigitado.length < 4){
+    if(nomeDigitado.length == "" || nomeDigitado.length < 4 || espresaoNomeF.test(nomeDigitado)){
         alert("Favor Preencha Corretamente o Nome Completo!")
     }else{
         if(cpfDigitado.length == "" || expresionCPF.test(cpfDigitado)|| cpfDigitado.value <11 ){
@@ -132,10 +134,11 @@ function CadastrarProfessor(){
     var nomeDigitado = document.getElementById("nomeProfessor").value;
     var cpfDigitado = document.getElementById("cpfProfessor").value;
     var materiaDigitado = document.getElementById("MateriasProfessor").value;
+    espresaoNomeP = /[a-z]/;
     expresionCPFprof = /[a-z]/; 
 
     //Valdando campos vazios
-    if(nomeDigitado.length == "" || nomeDigitado.length < 4){
+    if(nomeDigitado.length == "" || nomeDigitado.length < 4 || espresaoNomeP.test(nomeDigitado)){
         alert("Favor Preencha Corretamente o Nome!")
     }else if(cpfDigitado.length == "" || cpfDigitado.length < 11 || expresionCPFprof.test(cpfDigitado)){
         alert("Favor Preencha Corretamente o CPF!")
