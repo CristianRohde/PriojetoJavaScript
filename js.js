@@ -12,7 +12,7 @@ function CadastrarAluno(){
     var telefoneDigitado = document.getElementById("telefoneAluno").value;
     var nascDigitado = document.getElementById("nascAluno").value;
     expresionMail = /\w+@\w+\.+[a-z]/; 
-    expresaoNomeA = /[a-z]/;
+    expresaoNomeA = /[0-9]/;
     
     //Validando campos vazios
     if(nomeDigitado.length == "" || nomeDigitado.length < 4 || expresaoNomeA.test(nomeDigitado)){
@@ -77,7 +77,7 @@ function CadastrarFuncionario(){
     var nomeDigitado = document.getElementById("nomef").value;
     var cpfDigitado = document.getElementById("cpff").value;
     var setorDigitado = document.getElementById("Setorf").value;
-    espresaoNomeF = /[a-z]/;
+    espresaoNomeF = /[0-9]/;
     expresionCPF = /[a-z]/; 
  
     //Valdando campos vazios
@@ -134,7 +134,7 @@ function CadastrarProfessor(){
     var nomeDigitado = document.getElementById("nomeProfessor").value;
     var cpfDigitado = document.getElementById("cpfProfessor").value;
     var materiaDigitado = document.getElementById("MateriasProfessor").value;
-    espresaoNomeP = /[a-z]/;
+    espresaoNomeP = /[0-9]/;
     expresionCPFprof = /[a-z]/; 
 
     //Valdando campos vazios
