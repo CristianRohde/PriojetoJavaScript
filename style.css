@@ -1,3 +1,7 @@
+body{
+    background: url('imgF.jpg')no-repeat;
+}
+
 /* Ocultando o formulario de almazenamento dos Alunos*/
 .containerAluno{
    display: none; 
@@ -79,8 +83,9 @@ a{
     width: 1000px;
     color: rgb(138, 21, 138);
     font-size: 40px;
-    background: rgb(241, 104, 104);
+    background: rgb(241, 154, 104);
     padding: 10px;
+    border-radius: 10px;
 }
 a:hover{
     background-color: red;
